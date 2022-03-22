@@ -12,6 +12,7 @@
 // home.js
 const Layout = () => import('@/layout/index.vue')
 const Home = () => import('@/views/home/index.vue')
+const Report = () => import('@/views/report/index.vue')
 
 export default [
   {
@@ -30,6 +31,26 @@ export default [
         meta: {
           title: '首页',
           affix: true,
+        },
+      },
+    ],
+  },
+  {
+    path: '/report',
+    component: Layout,
+    name: 'report',
+    meta: {
+      title: '报告',
+    },
+    icon: 'report',
+    children: [
+      {
+        path: '',
+        name: 'report',
+        component: Report,
+        meta: {
+          title: '报告',
+          affix: false,
         },
       },
     ],
