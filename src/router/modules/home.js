@@ -10,10 +10,10 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 // home.js
+
 const Layout = () => import('@/layout/index.vue')
 const Home = () => import('@/views/home/index.vue')
 const Report = () => import('@/views/report/index.vue')
-
 export default [
   {
     path: '/home',
@@ -33,25 +33,15 @@ export default [
           affix: true,
         },
       },
-    ],
-  },
-  {
-    path: '/report',
-    component: Layout,
-    name: 'report',
-    meta: {
-      title: '报告',
-    },
-    icon: 'report',
-    children: [
       {
-        path: '',
-        name: 'report',
+        path: '/report/view',
         component: Report,
+        name: 'report-view',
         meta: {
-          title: '报告',
-          affix: false,
+          title: '详情',
         },
+        icon: 'report',
+        hidden: true,
       },
     ],
   },

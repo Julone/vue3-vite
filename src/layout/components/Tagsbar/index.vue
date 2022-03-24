@@ -134,7 +134,7 @@ export default defineComponent({
     vertical-align: bottom;
     cursor: pointer;
     &:first-of-type {
-      margin-left: 15px;
+      // margin-left: 15px;
     }
     &:last-of-type {
       margin-right: 15px;

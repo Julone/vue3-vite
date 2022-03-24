@@ -14,7 +14,8 @@ import { getItem, setItem, removeItem } from '@/utils/storage' //getItem和setIt
 const TAGLIST = 'VEA-TAGLIST'
 
 const state = {
-  tagList: getItem(TAGLIST) || [],
+  // tagList: getItem(TAGLIST) || [],
+  tagList: [],
   cacheList: [],
   activePosition: -1,
 }
@@ -42,7 +43,7 @@ const mutations = {
     }
 
     // 保存到localStorage
-    setItem(TAGLIST, state.tagList)
+    // setItem(TAGLIST, state.tagList)
   },
   ADD_CACHE_LIST: (state, tag) => {
     if (state.cacheList.includes(tag.name)) return

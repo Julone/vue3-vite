@@ -1,14 +1,13 @@
 <template>
   <el-dropdown trigger="click">
     <div class="userinfo">
-      <template v-if="!userinfo">
-        <i class="el-icon-user" />
-        admin
-      </template>
-      <template v-else>
-        <img class="avatar" :src="userinfo.avatar" />
+      <el-avatar
+        size="small"
+        src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+      ></el-avatar>
+      <span style="margin-left: 8px;">
         {{ userinfo.name }}
-      </template>
+      </span>
     </div>
     <template #dropdown>
       <el-dropdown-menu>
@@ -24,27 +23,26 @@ import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { useUserinfo } from '@/components/Avatar/hooks/useUserinfo'
 import LockModal from './LockModal.vue'
-
+import { UserFilled } from '@element-plus/icons'
 export default defineComponent({
   components: {
     LockModal,
+    UserFilled,
   },
   setup() {
     const store = useStore()
     const router = useRouter()
-
     const { userinfo } = useUserinfo()
-
     // 退出
     const logout = () => {
       // 清除token
       store.dispatch('app/clearToken')
       router.push('/login')
     }
-
     return {
       userinfo,
       logout,
+      UserFilled,
     }
   },
 })
