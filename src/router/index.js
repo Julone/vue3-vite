@@ -9,7 +9,7 @@ import test from './modules/test'
 
 /* 菜单栏的路由 */
 // 固定菜单
-export const fixedRoutes = [...home, ...test]
+export const fixedRoutes = [...home]
 // 动态菜单
 export const asyncRoutes = [...test]
 
