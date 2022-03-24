@@ -49,6 +49,7 @@ export default env => {
     },
     server: {
       open: true,
+      port: 8088,
       proxy: {
         '/api': {
           target: 'http://dev.api.xxx.com', // 后端接口的域名

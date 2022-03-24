@@ -8,8 +8,8 @@
   },
   "scripts": {
     "start": "npm run dev:mock",
-    "dev": "vite",
-    "dev:mock": "vite --mode mock",
+    "dev": "vite --host",
+    "dev:mock": "vite --host --mode mock",
     "build": "vite build",
     "build:mock": "vite build --mode mock",
     "serve": "vite preview",
